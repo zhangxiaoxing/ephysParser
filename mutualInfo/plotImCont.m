@@ -191,7 +191,7 @@ save('Im8sGo.mat','pCrossTime','Im');
             end
             if (max(bSpkCount)-min(bSpkCount))~=0
 %                 imB=p_s_b*integral(@(x) pdf(pdfb,x)*p_s_b*(log2(pdf(pdfb,x)/pdf(pdfr,x))),0,1000);
-                imB=p_s_b*nansum(arrayfun(@(x) poisspdf(x,pdfb.lambda)*p_s_a*(log2(poisspdf(x,pdfb.lambda)/poisspdf(x,pdfr.lambda))),0:300));
+                imB=p_s_b*nansum(arrayfun(@(x) poisspdf(x,pdfb.lambda)*p_s_b*(log2(poisspdf(x,pdfb.lambda)/poisspdf(x,pdfr.lambda))),0:300));
             else
 %                 imB=p_s_b*integral(@(x) -log2(pdf(pdfr,x)),0,1000);
                 imB=p_s_b*nansum(arrayfun(@(x) -log2(poisspdf(x,pdfr.lambda)),0:300));
